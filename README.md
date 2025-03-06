@@ -20,9 +20,18 @@ The app demonstrates how to handle both posts and users, allowing users to navig
 - **Hilt for Dependency Injection**
 - **LiveData & StateFlow**
 
+  # Preview
+<table>
+  <tr>
+    <td><img src="https://github.com/VimalPatel14/MVVM-Compose-Example/blob/master/Screenshot_1741298974.png" alt="Posts"></td>
+    <td><img src="https://github.com/VimalPatel14/MVVM-Compose-Example/blob/master/Screenshot_1741298977.png" alt="Users"></td>
+  </tr>
+</table>
+
 ## Getting Started
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/VimalPatel14/MVVM-Compose-Example
+

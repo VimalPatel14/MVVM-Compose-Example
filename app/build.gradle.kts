@@ -95,4 +95,22 @@ dependencies {
     implementation(libs.moshi.adapter)
     kapt(libs.moshi.codegen)
 
+    //shimmer
+    implementation(libs.shimmer)
+
+    testImplementation("org.mockito:mockito-core:5.0.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+
+    // Mockk for mocking dependencies
+    testImplementation("io.mockk:mockk:1.12.5")
+
+    // LiveData testing with InstantTaskExecutorRule
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+
+    // Coroutines Test Dispatcher for testing coroutines
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.0")
+
+
+    // Room Testing (if needed)
+    testImplementation("androidx.room:room-testing:2.5.0")
 }

@@ -41,9 +41,9 @@ class PostViewModel @Inject constructor(
 
     private fun fetchPosts() {
         viewModelScope.launch {
-            delay(2000)
             getPostsUseCase()
                 .onEach { posts ->
+                    delay(2000)
                     _posts.value = posts
                     _isPostLoading.value = false
                 }
@@ -53,9 +53,9 @@ class PostViewModel @Inject constructor(
 
     private fun fetchUsers() {
         viewModelScope.launch {
-            delay(2000)
             getUsersUseCase()
                 .onEach { users ->
+                    delay(2000)
                     _users.value = users
                     _isUserLoading.value = false
                 }

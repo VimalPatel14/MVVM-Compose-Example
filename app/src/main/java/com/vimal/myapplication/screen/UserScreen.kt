@@ -27,10 +27,7 @@ import com.vimal.myapplication.ui.theme.MyApplicationTheme
 @Composable
 fun UserScreen(modifier: Modifier, isLoading : Boolean, users: List<User>) {
     if (isLoading) {
-        CircularProgressIndicator(
-            modifier = modifier,
-            color = Color.Red
-        )
+        ShimmerLoadingEffect(modifier = modifier, isPost = false)
     } else {
         LazyColumn(modifier = modifier) {
             items(users) { user ->

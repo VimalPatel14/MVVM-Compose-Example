@@ -17,16 +17,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.accompanist.placeholder.PlaceholderHighlight
+import com.google.accompanist.placeholder.material.placeholder
+import com.google.accompanist.placeholder.material.shimmer
 import com.vimal.myapplication.model.Post
 import com.vimal.myapplication.ui.theme.MyApplicationTheme
 
 @Composable
 fun PostScreen(modifier: Modifier, isLoading : Boolean, posts: List<Post>) {
     if (isLoading) {
-        CircularProgressIndicator(
-            modifier = modifier,
-            color = Color.Red
-        )
+        ShimmerLoadingEffect(modifier = modifier, isPost = true )
     } else {
         LazyColumn(modifier = modifier) {
             items(posts) { post ->

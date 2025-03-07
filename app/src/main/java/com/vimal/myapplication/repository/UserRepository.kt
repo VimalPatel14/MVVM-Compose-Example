@@ -19,7 +19,6 @@ class UserRepository @Inject constructor(
         if (cachedUsers.isEmpty()) {
             // Fetch from API only if DB is empty
             val response = apiService.getUsers()
-            delay(5000)
             userDao.insertUsers(response.map { User(it.id, it.address, it.company, it.email, it.name, it.phone, it.username, it.website) })
         }
     }

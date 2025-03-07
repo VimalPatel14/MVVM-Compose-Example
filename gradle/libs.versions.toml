@@ -14,7 +14,7 @@ hiltNavigation = "1.0.0"
 room = "2.6.1"
 moshi = "1.15.0"
 viewModel = "2.6.2"
-
+shimmer = "0.25.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,6 +38,7 @@ room = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 view-model = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "viewModel" }
+shimmer = { module = "com.google.accompanist:accompanist-placeholder-material", version.ref = "shimmer" }
 
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" } # acrescentada por mim, GMINI
 hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigation" } # acrescentada por mim, GMINI

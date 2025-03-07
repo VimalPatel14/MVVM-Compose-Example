@@ -1,26 +1,31 @@
-# MVVM-Compose-Example
-Android #JetpackCompose #MVVM #Hilt #Flow #Kotlin
+# MVVMComposeRetrofitRoom
 
-A simple Android project demonstrating **MVVM** architecture with **Jetpack Compose**. This app fetches and displays data (posts and users) using **Flow** and **Hilt** for dependency injection. The project shows how to handle UI states and navigate between screens using Compose, while leveraging best practices like ViewModel, Repository, and UseCase layers.
+A modern Android app built with **Jetpack Compose**, **MVVM architecture**, **Retrofit**, **Room Database**, and **Hilt for Dependency Injection**. The app fetches data from an API and caches it using Room to avoid unnecessary network calls.
 
-## Features:
-- MVVM architecture
-- Jetpack Compose UI
-- Flow for reactive data handling
-- Hilt for Dependency Injection
-- Simple navigation with state management
+## 🚀 Features
+- **MVVM Architecture** for clean separation of concerns
+- **Jetpack Compose** for modern UI development
+- **Retrofit** for making API calls
+- **Room Database** for local storage and caching
+- **Flow & Coroutines** for reactive data handling
+- **Hilt** for dependency injection
+- **Live Preview with Jetpack Compose**
 
-## Demo
-The app demonstrates how to handle both posts and users, allowing users to navigate between screens with a button press. It also shows how to handle back presses to return to the main screen.
-
-### Technologies:
-- **Android Jetpack Compose**
+## 🛠️ Tech Stack
+- **Kotlin**
+- **Jetpack Compose**
 - **MVVM Architecture**
-- **Kotlin Coroutines & Flow**
-- **Hilt for Dependency Injection**
-- **LiveData & StateFlow**
+- **Retrofit** (for API calls)
+- **Room** (for local database)
+- **Flow & Coroutines** (for async operations)
+- **Hilt** (for dependency injection)
 
-  # Preview
+## 📦 API Source
+The app fetches data from [JSONPlaceholder](https://jsonplaceholder.typicode.com/).
+- `/posts` - Fetches posts
+- `/users` - Fetches users
+
+## 📸 Screenshots
 <table>
   <tr>
     <td><img src="https://github.com/VimalPatel14/MVVM-Compose-Example/blob/master/Screenshot_1741298974.png" alt="Posts"></td>

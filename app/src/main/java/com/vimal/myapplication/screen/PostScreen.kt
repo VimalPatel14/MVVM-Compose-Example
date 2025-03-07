@@ -58,6 +58,7 @@ fun PreviewPostItem() {
     MyApplicationTheme {
         PostItem(
             post = Post(
+                id = 1,
                 title = "Sample Post Title",
                 body = "This is a sample post body to showcase the preview."
             )

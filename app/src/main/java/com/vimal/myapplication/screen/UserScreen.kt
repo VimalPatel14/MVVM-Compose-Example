@@ -2,6 +2,7 @@ package com.vimal.myapplication.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -17,6 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.vimal.myapplication.model.user.Address
+import com.vimal.myapplication.model.user.Company
+import com.vimal.myapplication.model.user.Geo
 import com.vimal.myapplication.model.user.User
 import com.vimal.myapplication.ui.theme.MyApplicationTheme
 
@@ -55,17 +59,32 @@ fun UserItem(user: User) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewUserItem() {
+    val fakeUser = User(
+        id = 1,
+        name = "Leanne Graham",
+        username = "Bret",
+        email = "Sincere@april.biz",
+        address = Address(
+            street = "Kulas Light",
+            suite = "Apt. 556",
+            city = "Gwenborough",
+            zipcode = "92998-3874",
+            geo = Geo(
+                lat = "-37.3159",
+                lng = "81.1496"
+            )
+        ),
+        phone = "1-770-736-8031 x56442",
+        website = "hildegard.org",
+        company = Company(
+            name = "Romaguera-Crona",
+            catchPhrase = "Multi-layered client-server neural-net",
+            bs = "harness real-time e-markets"
+        )
+    )
     MyApplicationTheme {
         UserItem(
-            user = User(
-                name = "Vimal Patel",
-                email = "V@gmail.com",
-                phone = "",
-                username = "",
-                website = "",
-                address = null,
-                company = null,
-            )
+            user = fakeUser
         )
     }
 }

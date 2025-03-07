@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -55,6 +56,8 @@ class MainActivity : ComponentActivity() {
                     } else if (isUserClick) {
                         // If we're on the UserScreen, set isUserClick to false to show the buttons again
                         isUserClick = false
+                    } else {
+                        finish()
                     }
                 }
 
@@ -72,19 +75,19 @@ class MainActivity : ComponentActivity() {
 
                    if (isUserClick) {
                        UserScreen(
-                           modifier = Modifier.padding(padding),
+                           modifier = Modifier.padding(padding).fillMaxSize(),
                            isLoading = isUserLoading,
                            users = users
                        )
                    } else if (isPostClick) {
                        PostScreen(
-                           modifier = Modifier.padding(padding),
-                           isLoading = isUserLoading,
+                           modifier = Modifier.padding(padding).fillMaxSize(),
+                           isLoading = isPostLoading,
                            posts = posts
                        )
                    } else {
                        Column(
-                           modifier = Modifier.padding(padding).fillMaxHeight(),
+                           modifier = Modifier.padding(padding).fillMaxSize(),
                            horizontalAlignment = Alignment.CenterHorizontally,
                            verticalArrangement = Arrangement.spacedBy(30.dp)
                        ) {

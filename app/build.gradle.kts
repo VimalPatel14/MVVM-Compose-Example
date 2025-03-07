@@ -75,13 +75,17 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // dagger
-    implementation(libs.hilt.android)  // adicionado por mim, GMINI
+    implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation)
 
+    // room
+    implementation(libs.room)
+    kapt(libs.room.compiler)
+    implementation(libs.room.ktx)
+
     // coroutines
-//    implementation(libs.compose.viewModel)
-//    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+    implementation(libs.view.model)
 
     //retrofit
     implementation(libs.retrofit)

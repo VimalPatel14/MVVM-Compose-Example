@@ -1,8 +1,6 @@
 package com.vimal.myapplication
 
 import com.vimal.myapplication.network.ApiService
-import com.vimal.myapplication.network.PostRepositoryImpl
-import com.vimal.myapplication.network.UserRepositoryImpl
 import com.vimal.myapplication.repository.PostRepository
 import com.vimal.myapplication.repository.UserRepository
 import com.vimal.myapplication.usecases.GetPostsUseCase
@@ -34,11 +32,6 @@ object AppModule {
         return retrofit.create(ApiService::class.java)
     }
 
-    @Provides
-    @Singleton
-    fun providePostRepository(apiService: ApiService): PostRepository {
-        return PostRepositoryImpl(apiService)
-    }
 
     @Provides
     @Singleton
@@ -46,11 +39,6 @@ object AppModule {
         return GetPostsUseCase(repository)
     }
 
-    @Provides
-    @Singleton
-    fun provideUserRepository(apiService: ApiService): UserRepository {
-        return UserRepositoryImpl(apiService)
-    }
 
     @Provides
     @Singleton

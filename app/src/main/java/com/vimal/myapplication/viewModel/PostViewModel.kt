@@ -11,6 +11,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -39,23 +41,25 @@ class PostViewModel @Inject constructor(
 
     private fun fetchPosts() {
         viewModelScope.launch {
-            _isPostLoading.value = true
-            delay(5000)
-            getPostsUseCase().collect { posts ->
-                _posts.value = posts
-                _isPostLoading.value = false
-            }
+            delay(2000)
+            getPostsUseCase()
+                .onEach { posts ->
+                    _posts.value = posts
+                    _isPostLoading.value = false
+                }
+                .launchIn(this)
         }
     }
 
     private fun fetchUsers() {
         viewModelScope.launch {
-            _isUserLoading.value = true
-            delay(5000)
-            getUsersUseCase().collect { users ->
-                _users.value = users
-                _isUserLoading.value = false
-            }
+            delay(2000)
+            getUsersUseCase()
+                .onEach { users ->
+                    _users.value = users
+                    _isUserLoading.value = false
+                }
+                .launchIn(this)
         }
     }
 }
